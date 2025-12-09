@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f2f2;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .recipe-card {
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay h1 {
+            color: #fff;
+            font-size: 2.5em;
+            text-align: center;
+            padding: 20px;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff5f5;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #d9534f;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #d9534f;
+            color: #d9534f;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .columns {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1em;
+            padding: 5px;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+
+        li::before {
+            content: "\f2e7"; /* FontAwesome carrot icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 10px;
+            color: #d9534f;
+        }
+
+        li:hover {
+            background-color: #ffe5e5;
+            transform: translateX(5px);
+        }
+
+        .instructions {
+            background-color: #fff5f5;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .instructions p {
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.2s;
+            border-radius: 8px;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .instructions p:hover {
+            background-color: #ffe5e5;
+            transform: scale(1.02);
+        }
+
+        .instructions input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: #d9534f;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 650px) {
+            .columns {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="recipe-card">
+        <div class="image-container">
+            <img src="pizza.jpg" alt="Delicious homemade pizza">
+            <div class="overlay">
+                <h1>Odin Recipes</h1>
+            </div>
+        </div>
+
+        <div class="content">
+            <!-- Prep / Cook / Servings Info -->
+            <div class="info">
+                <div><i class="fa-regular fa-clock"></i> Prep: 15 min</div>
+                <div><i class="fa-solid fa-hourglass-start"></i> Cook: 15 min</div>
+                <div><i class="fa-solid fa-utensils"></i> Servings: 4</div>
+            </div>
+
+            <h2>Description</h2>
+            <p>
+                This classic homemade pizza is loaded with fresh ingredients and bursting with flavor. 
+                The crust is crispy on the outside while remaining soft and chewy inside. Topped with a 
+                rich tomato sauce, melted mozzarella, and your favorite toppings, this pizza is sure 
+                to be a hit at any meal.
+            </p>
+
+            <div class="columns">
+                <div class="column">
+                    <h2>Ingredients</h2>
+                    <ul>
+                        <li>1 pizza dough</li>
+                        <li>1 cup tomato sauce</li>
+                        <li>2 cups shredded mozzarella cheese</li>
+                        <li>1/2 cup sliced pepperoni</li>
+                        <li>1/4 cup sliced bell peppers</li>
+                        <li>1 tsp dried oregano</li>
+                    </ul>
+                </div>
+
+                <div class="column">
+                    <h2>Instructions</h2>
+                    <div class="instructions">
+                        <p><input type="checkbox"> Preheat your oven to 475°F (245°C).</p>
+                        <p><input type="checkbox"> Roll out the pizza dough on a floured surface.</p>
+                        <p><input type="checkbox"> Spread tomato sauce evenly over the dough.</p>
+                        <p><input type="checkbox"> Sprinkle shredded mozzarella and arrange toppings.</p>
+                        <p><input type="checkbox"> Bake for 12-15 minutes until crust is golden and cheese is bubbly.</p>
+                        <p><input type="checkbox"> Slice and enjoy your homemade pizza!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
